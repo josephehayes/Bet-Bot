@@ -1,0 +1,1 @@
+{"user": [{"name": "phantaci#7213", "username": "phantaci", "mentionname": "<@111965970767093760>", "Liandri": 100, "Current Bet": 0, "Current team": "blue", "Current Team": "none"}]}
