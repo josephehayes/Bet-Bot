@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #with open(r'C:\Users\joeyh\Development\UFC\BetBot\token.txt', 'r') as t:
-TOKEN = os.environ.get('DISCORD_TOKEN')
+TOKEN = os.getenv('DISCORD_TOKEN')
 #TOKEN = r'xxx'
 #TOKEN = ${{ DISCORD_TOKEN }}
 
