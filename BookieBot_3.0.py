@@ -11,8 +11,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-#with open('/home/pugbot/discord-bookiebot/BookieBot/token.txt', 'r') as t:
-TOKEN = '######'
+#with open(r'C:\Users\joeyh\Development\UFC\BetBot\token.txt', 'r') as t:
+TOKEN = os.environ.get('DISCORD_TOKEN')
+#TOKEN = r'xxx'
+#TOKEN = ${{ DISCORD_TOKEN }}
 
 client = discord.Client(intents=discord.Intents.default())
 # = discord.Client()
@@ -1050,31 +1052,33 @@ async def welfare(message):
     await message.channel.send(response)
 
 
-global channel_ut4
+global channel_ut2k4
 global channel_garden
-id_user_pugbot = 141723331471605760
-id_chan_ut4 = 192460940409700352
-id_chan_garden = 493208320916717578
-str_puglive = 'Teams have been selected:'
+id_user_pugbot = 1010039424177950861
+id_chan_ut2k4 = 793748350133338122
+
+#Garden = UT4 Channel that I don't have access to. Should be fine to swap to the main pug channel
+#id_chan_garden = 493208320916717578
+
+str_puglive = 'TEAMS READY - Match'
 
 
 @client.event
 async def on_ready():
 
-    global channel_ut4
-    channel_ut4 = client.get_channel(id_chan_ut4)
-    global channel_garden
-    channel_garden = client.get_channel(id_chan_garden)
+    global channel_ut2k4
+    channel_ut2k4 = client.get_channel(id_chan_ut2k4)
+    # global channel_garden
+    # channel_garden = client.get_channel(id_chan_garden)
 
 
 @client.event
 async def on_message(message):
 
     if message.content.startswith(
-            str_puglive) and message.author.id == id_user_pugbot and message.channel == channel_garden:
-        await channel_ut4.send(message.content)
-        await channel_ut4.send("$openbets")
+            str_puglive) and message.author.id == id_user_pugbot and message.channel == channel_ut2k4:
+        await channel_ut2k4.send(message.content)
+        await channel_ut2k4.send("$openbets")
 
 
 bot.run(TOKEN)
-
