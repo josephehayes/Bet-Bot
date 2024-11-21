@@ -1071,14 +1071,15 @@ async def on_ready():
     # global channel_garden
     # channel_garden = client.get_channel(id_chan_garden)
 
+#Auto open bets. Doesn't work with Multipugs. Could workaround with the actual pug number
 
-@client.event
-async def on_message(message):
+# @client.event
+# async def on_message(message):
 
-    if message.content.startswith(
-            str_puglive) and message.author.id == id_user_pugbot and message.channel == channel_ut2k4:
-        await channel_ut2k4.send(message.content)
-        await channel_ut2k4.send("$openbets")
+#     if message.content.startswith(
+#             str_puglive) and message.author.id == id_user_pugbot and message.channel == channel_ut2k4:
+#         await channel_ut2k4.send(message.content)
+#         await channel_ut2k4.send("$openbets")
 
 
 bot.run(TOKEN)
